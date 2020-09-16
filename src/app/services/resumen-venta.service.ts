@@ -26,7 +26,7 @@ export class ResumenVentaService {
   }
 
   putResumenVenta(resumenVenta: ResumenVenta) {
-    return this.http.put(this.URL_API + `/${resumenVenta._idFactura}`, resumenVenta);
+    return this.http.put(this.URL_API + `/${resumenVenta._idBill}`, resumenVenta);
   }
 
   deleteResumenVenta(_id: string) {
