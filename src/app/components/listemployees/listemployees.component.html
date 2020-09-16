@@ -1,1 +1,111 @@
-<p>listemployees works!</p>
+<body class="sb-nav-fixed">
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    <h2 class="mt-30 page-title">Empleados</h2>
+                    <div class="row justify-content-between">
+                        <div class="col-lg-12">
+                            <a routerLink = "/employees" routerLinkActive = "active" class="add-btn hover-btn">Agregar empleado</a>
+                        </div>
+                        <div class="col-lg-2 col-md-4">
+                            <div class="bulk-section mt-30">
+                                <div class="input-group">
+                                    <select id="action" name="action" class="form-control">
+                                        <option value="1">Todos</option>
+											<option selected value="2">Activos</option>
+											<option value="3">Inactivos</option>
+                                    </select>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-md-6">
+                            <div class="bulk-section mt-30">
+                                <div class="search-by-name-input">
+                                    <input type="text" class="form-control" name="searchemp" placeholder="Buscar empleado" [(ngModel)]="searchemp">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card card-static-2 mt-30 mb-30">
+                                <div class="card-body-table">
+                                    <div class="table-responsive">
+                                        <table class="table ucp-table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>id</th>
+                                                    <th>Nombre</th>
+                                                    <th>Apellido</th>
+                                                    <th>FechaDeNacimiento</th>
+                                                    <th>Pais</th>
+                                                    <th>Ciudad</th>
+                                                    <th>DNI</th>
+                                                    <th>Sexo</th>
+                                                    <th>EstadoCivil</th>
+                                                    <th>CorreoElectronico</th>
+                                                    <th>Telefono</th>
+                                                    <th>Direccion</th>
+                                                    <th>FechaDeIngreso</th>
+                                                    <th>Estado</th>
+                                                    <th>Puesto</th>
+                                                    <th>HorasDeTrabajo</th>
+                                                    <th>Turno</th>
+                                                    <th>Horario</th>
+                                                    <th>Sueldo</th>
+                                                    <th>CargasFamiliares</th>
+                                                    <th>CBU</th>
+                                                    <th>Banco</th>
+                                                    <th>ObraSocial</th>
+                                                    <th>Acción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor = "let employee of employeeService.employees | filtersearchemp:searchemp">
+                                                    
+                                                    <td>{{employee._id}}</td>
+                                                    <td>{{employee.Nombre}}</td>
+                                                    <td>{{employee.Apellido}}</td>
+                                                    <td>{{employee.FechaDeNacimiento}}</td>
+                                                    <td>{{employee.Pais}}</td>
+                                                    <td>{{employee.Ciudad}}</td>
+                                                    <td>{{employee.DNI}}</td>
+                                                    <td>{{employee.Sexo}}</td>
+                                                    <td>{{employee.EstadoCivil}}</td>
+                                                    <td>{{employee.CorreoElectronico}}</td>
+                                                    <td>{{employee.Telefono}}</td>
+                                                    <td>{{employee.Direccion}}</td>
+                                                    <td>{{employee.FechaDeIngreso}}</td>
+                                                    <td>{{employee.Estado}}</td>
+                                                    <td>{{employee.Puesto}}</td>
+                                                    <td>{{employee.HorasDeTrabajo}}</td>
+                                                    <td>{{employee.Turno}}</td>
+                                                    <td>{{employee.Horario}}</td>
+                                                    <td>{{employee.Sueldo}}</td>
+                                                    <td>{{employee.CargasFamiliares}}</td>
+                                                    <td>{{employee.CBU}}</td>
+                                                    <td>{{employee.Banco}}</td>
+                                                    <td>{{employee.ObraSocial}}</td>
+                                                    <td class="action-btns">
+                                                        <a (click)="editemployee(employee)" routerLink = "/addemployees" routerLinkActive = "active" class="edit-btn" title="Editar"><i class="fas fa-edit"></i></a>
+                                                        <a (click)="confirmDeleteEmployee(employee._id)" class="Eliminar-btn" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </main>
+            
+        </div>
+    </div>
+    
+   
+</body>

@@ -26,10 +26,10 @@ export class EmployeeService {
   }
 
   putEmployee(employee: Employee) {
-    return this.http.put(this.URL_API + `/${employee.id}`, employee);
+    return this.http.put(this.URL_API + `/${employee._id}`, employee);
   }
 
-  deleteEmployee(id: string) {
-    return this.http.delete(this.URL_API + `/${id}`);
+  deleteEmployee(_id: string) {
+    return this.http.delete(this.URL_API + `/${_id}`);
   }
 }

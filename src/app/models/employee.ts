@@ -1,9 +1,9 @@
 export class Employee {
 
-    constructor(id = 0, Nombre = '', Apellido = '', FechaDeNacimiento = '', Pais = '', Ciudad = '', DNI = 0, Sexo = '', EstadoCivil = '', CorreoElectronico = '', Telefono = 0, Direccion = '', 
+    constructor(_id = '', Nombre = '', Apellido = '', FechaDeNacimiento = '', Pais = '', Ciudad = '', DNI = 0, Sexo = '', EstadoCivil = '', CorreoElectronico = '', Telefono = 0, Direccion = '', 
     FechaDeIngreso = '', Estado = '', Puesto = '', HorasDeTrabajo = 0,  Turno = '', Horario = '', Sueldo = 0, CargasFamiliares = 0, CBU = 0, Banco = '', ObraSocial = '',  )
     {
-        this.id = id;
+        this._id = _id;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.FechaDeNacimiento = FechaDeNacimiento;
@@ -28,7 +28,7 @@ export class Employee {
         this.ObraSocial = ObraSocial;
     }
 
-    id: number;
+    _id: string;
     Nombre: string;
     Apellido: string;
     FechaDeNacimiento: String;

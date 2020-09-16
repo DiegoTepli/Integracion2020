@@ -1,0 +1,82 @@
+
+
+    <body class="sb-nav-fixed">
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <h2 id = "nuevaventa" class="mt-30 page-title">Resumen de ventas</h2>
+                        <div class="row">
+							<div class="col-lg-3 col-md-4">
+								<div class="bulk-section mt-30">
+									<div class="input-group">
+										<select id="action" name="action" class="form-control">
+											<option value="1" selected>All métodos de pago</option>
+											<option value="2">Efectivo</option>
+											<option value="3">Mercado Pago</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-4">
+								<div class="bulk-section mt-30">
+									<div class="input-group">
+										<select id="action" name="action" class="form-control">
+											<option value ="1" selected>All fechas</option>
+											<option selected value="2">Últimas 24hs</option>
+											<option value="3">Últimos 7 días</option>
+											<option value="4">Úitlimo mes</option>
+                                            <option value="5">últimos 6 meses</option>
+                                            <option value="6">últimos 12 meses</option>
+										</select>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12 col-md-12">
+								<div class="card card-static-2 mt-30 mb-30">
+									<div class="card-body-table">
+										<div class="table-responsive">
+											<table class="table ucp-table table-hover">
+												<thead>
+													<tr>
+                                                        <th>Número de factura</th>
+                                                        <th>ID MercadoPago</th>
+														<th>Fecha</th>
+														<th>Total</th>
+														<th>Acción</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr *ngFor = "let resumenVenta of resumenVentaService.resumenVentas">
+														<td>{{resumenVenta._idFactura}}</td>
+														<td>{{resumenVenta._idMP}}</td>
+														<td>{{resumenVenta.Fecha}}</td>
+														<td>{{resumenVenta.Total}}</td>
+														<td class="action-btns">
+															<a href="#" class="edit-btn" title="Editar"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="Eliminar-btn" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
+                                                            <a routerLink = "/detalleFacturas" routerLinkActive = "active" class="views-btn"><i class="fas fa-eye"></i></a>
+														</td>
+													</tr>
+													<tr>		
+												</tbody>
+											</table>
+											<div class="col-lg-11 col-md-6">
+												<div class="container-fluid">
+													<div class="d-flex align-items-center row justify-content-between">
+														<h2 id = "totalperiodo" class="page-title">Total Período: $460</h2>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+					</div>
+                </main>
+            </div>
+        </div> 
+    </body>
+
