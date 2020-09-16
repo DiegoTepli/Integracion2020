@@ -17,23 +17,23 @@
                                                 <input type="hidden" name = "_id" #_id="ngModel" [(ngModel)] = "productService.selectedProduct._id">
                                                 <div class="form-group">
                                                     <label class="form-label">Nombre</label>
-                                                    <input type="text" class="form-control" name="Nombre" #Nombre = "ngModel" [(ngModel)] = "productService.selectedProduct.Nombre">
+                                                    <input type="text" class="form-control" name="name" #name = "ngModel" [(ngModel)] = "productService.selectedProduct.name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-label">FechaDeCreacion</label>
-                                                    <input type="text" class="form-control" name="FechaDeCreacion" #FechaDeCreacion = "ngModel" [(ngModel)] = "productService.selectedProduct.FechaDeCreacion">
+                                                    <input type="text" class="form-control" name="creationDate" #creationDate = "ngModel" [(ngModel)] = "productService.selectedProduct.creationDate">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-label">Precio</label>
-                                                    <input type="text" class="form-control" name="Precio" #Precio = "ngModel" [(ngModel)] = "productService.selectedProduct.Precio">
+                                                    <input type="text" class="form-control" name="price" #price = "ngModel" [(ngModel)] = "productService.selectedProduct.price">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-label">Stock</label>
-                                                    <input type="text" class="form-control" name="Stock" #Stock = "ngModel" [(ngModel)] = "productService.selectedProduct.Stock">
+                                                    <input type="text" class="form-control" name="stock" #stock = "ngModel" [(ngModel)] = "productService.selectedProduct.stock">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-label">Estado</label>
-                                                    <input type="text" class="form-control" name="Estado" #Estado = "ngModel" [(ngModel)] = "productService.selectedProduct.Estado">
+                                                    <input type="text" class="form-control" name="productStatus" #productStatus = "ngModel" [(ngModel)] = "productService.selectedProduct.productStatus">
                                                 </div>
                                                 <button class="save-btn hover-btn" type="submit" >Agregar producto</button>
                                                 

@@ -9,7 +9,7 @@ export class FilterventasearchprodPipe implements PipeTransform {
     if(arg === '' ||   arg.length < 3) return value;
     const searchventaprod = [];
     for (const post of value){
-      if(post.Producto.toLowerCase().indexOf(arg.toLowerCase()) > -1)
+      if(post.product.toLowerCase().indexOf(arg.toLowerCase()) > -1)
       {
         searchventaprod.push(post);
       };

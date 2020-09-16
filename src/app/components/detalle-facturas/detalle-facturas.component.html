@@ -32,10 +32,10 @@
                                                 <tr *ngFor = "let venta of ventaService.ventas| filterventasearchprod:searchventaprod">
                                                 
                                                     <td>{{venta._id}}</td>
-                                                    <td>{{venta.Producto}}</td>
-                                                    <td>{{venta.Cantidad}}</td>
-                                                    <td>{{venta.Precio}}</td>
-                                                    <td>{{venta.Subtotal}}</td>
+                                                    <td>{{venta.product}}</td>
+                                                    <td>{{venta.amount}}</td>
+                                                    <td>{{venta.price}}</td>
+                                                    <td>{{venta.subTotal}}</td>
                                                     <td class="action-btns">
                                                         <a (click)="editventa(venta)" class="edit-btn" title="Editar"><i class="fas fa-edit"></i></a>
                                                         <a (click)="deleteventa(venta._id)" class="Eliminar-btn" title="Eliminar"><i class="fas fa-trash-alt"></i></a>

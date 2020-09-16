@@ -9,7 +9,7 @@ export class FilterempsearchPipe implements PipeTransform {
     if(arg === '' ||   arg.length < 3) return value;
     const searchemp = [];
     for (const post of value){
-      if(post.Apellido.toLowerCase().indexOf(arg.toLowerCase()) > -1)
+      if(post.lastName.toLowerCase().indexOf(arg.toLowerCase()) > -1)
       {
         searchemp.push(post);
       };

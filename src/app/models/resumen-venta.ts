@@ -1,18 +1,18 @@
 export class ResumenVenta {
-    constructor(_idFactura = '', _idMP = '', Fecha = '', Total = '', TotalPeriodo = '')
+    constructor(_idBill = '', _idMP = '', date = '', total = '', totalPeriod = '')
     {
-        this._idFactura = _idFactura;
+        this._idBill = _idBill;
         this._idMP = _idMP;
-        this.Fecha = Fecha;
-        this.Total = Total;
-        this.TotalPeriodo = TotalPeriodo;
+        this.date = date;
+        this.total = total;
+        this.totalPeriod = totalPeriod;
        
     }
 
-    _idFactura: string;
+    _idBill: string;
     _idMP: string;
-    Fecha: string;
-    Total: String;
-    TotalPeriodo: string;
+    date: string;
+    total: String;
+    totalPeriod: string;
    
 }

@@ -52,11 +52,11 @@
 													<tr *ngFor = "let product of productService.products| filtersearchprod:searchprod">
                                                     
                                                         <td>{{product._id}}</td>
-                                                        <td>{{product.Nombre}}</td>
-                                                        <td>{{product.FechaDeCreacion}}</td>
-                                                        <td>{{product.Precio}}</td>
-                                                        <td>{{product.Stock}}</td>
-                                                        <td>{{product.Estado}}</td>
+                                                        <td>{{product.name}}</td>
+                                                        <td>{{product.creationDate}}</td>
+                                                        <td>{{product.price}}</td>
+                                                        <td>{{product.stock}}</td>
+                                                        <td>{{product.productStatus}}</td>
                                                         <td class="action-btns">
                                                             <a (click)="editproduct(product)" routerLink = "/products" routerLinkActive = "active" class="edit-btn" title="Editar"><i class="fas fa-edit"></i></a>
                                                             <a (click)="confirmDeleteProduct(product._id)" class="Eliminar-btn" title="Eliminar"><i class="fas fa-trash-alt"></i></a>

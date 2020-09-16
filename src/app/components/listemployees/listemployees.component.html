@@ -65,28 +65,28 @@
                                                 <tr *ngFor = "let employee of employeeService.employees | filtersearchemp:searchemp">
                                                     
                                                     <td>{{employee._id}}</td>
-                                                    <td>{{employee.Nombre}}</td>
-                                                    <td>{{employee.Apellido}}</td>
-                                                    <td>{{employee.FechaDeNacimiento}}</td>
-                                                    <td>{{employee.Pais}}</td>
-                                                    <td>{{employee.Ciudad}}</td>
-                                                    <td>{{employee.DNI}}</td>
-                                                    <td>{{employee.Sexo}}</td>
-                                                    <td>{{employee.EstadoCivil}}</td>
-                                                    <td>{{employee.CorreoElectronico}}</td>
-                                                    <td>{{employee.Telefono}}</td>
-                                                    <td>{{employee.Direccion}}</td>
-                                                    <td>{{employee.FechaDeIngreso}}</td>
-                                                    <td>{{employee.Estado}}</td>
-                                                    <td>{{employee.Puesto}}</td>
-                                                    <td>{{employee.HorasDeTrabajo}}</td>
-                                                    <td>{{employee.Turno}}</td>
-                                                    <td>{{employee.Horario}}</td>
-                                                    <td>{{employee.Sueldo}}</td>
-                                                    <td>{{employee.CargasFamiliares}}</td>
-                                                    <td>{{employee.CBU}}</td>
-                                                    <td>{{employee.Banco}}</td>
-                                                    <td>{{employee.ObraSocial}}</td>
+                                                    <td>{{employee.name}}</td>
+                                                    <td>{{employee.lastName}}</td>
+                                                    <td>{{employee.dateOfBirth}}</td>
+                                                    <td>{{employee.country}}</td>
+                                                    <td>{{employee.city}}</td>
+                                                    <td>{{employee.dni}}</td>
+                                                    <td>{{employee.gender}}</td>
+                                                    <td>{{employee.civilStatus}}</td>
+                                                    <td>{{employee.mail}}</td>
+                                                    <td>{{employee.phone}}</td>
+                                                    <td>{{employee.address}}</td>
+                                                    <td>{{employee.dateOfAdmission}}</td>
+                                                    <td>{{employee.employeeStatus}}</td>
+                                                    <td>{{employee.position}}</td>
+                                                    <td>{{employee.workHours}}</td>
+                                                    <td>{{employee.turn}}</td>
+                                                    <td>{{employee.schedule}}</td>
+                                                    <td>{{employee.salary}}</td>
+                                                    <td>{{employee.familyResponsibilities}}</td>
+                                                    <td>{{employee.cbu}}</td>
+                                                    <td>{{employee.bank}}</td>
+                                                    <td>{{employee.socialWork}}</td>
                                                     <td class="action-btns">
                                                         <a (click)="editemployee(employee)" routerLink = "/addemployees" routerLinkActive = "active" class="edit-btn" title="Editar"><i class="fas fa-edit"></i></a>
                                                         <a (click)="confirmDeleteEmployee(employee._id)" class="Eliminar-btn" title="Eliminar"><i class="fas fa-trash-alt"></i></a>

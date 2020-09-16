@@ -49,10 +49,10 @@
 												</thead>
 												<tbody>
 													<tr *ngFor = "let resumenVenta of resumenVentaService.resumenVentas">
-														<td>{{resumenVenta._idFactura}}</td>
+														<td>{{resumenVenta._idBill}}</td>
 														<td>{{resumenVenta._idMP}}</td>
-														<td>{{resumenVenta.Fecha}}</td>
-														<td>{{resumenVenta.Total}}</td>
+														<td>{{resumenVenta.date}}</td>
+														<td>{{resumenVenta.total}}</td>
 														<td class="action-btns">
 															<a href="#" class="edit-btn" title="Editar"><i class="fas fa-edit"></i></a>
                                                             <a href="#" class="Eliminar-btn" title="Eliminar"><i class="fas fa-trash-alt"></i></a>

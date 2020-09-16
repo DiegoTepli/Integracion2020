@@ -10,7 +10,7 @@ export class FilterprodsearchPipe implements PipeTransform {
     if(arg === '' ||   arg.length < 3) return value;
     const searchprod = [];
     for (const post of value){
-      if(post.Nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1)
+      if(post.name.toLowerCase().indexOf(arg.toLowerCase()) > -1)
       {
         searchprod.push(post);
       };
