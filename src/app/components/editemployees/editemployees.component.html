@@ -9,110 +9,110 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="card card-static-2 mb-30">
                                 <div class="card-title-2">
-                                    <h4>Agregar nuevo empleado</h4>
+                                    <h4>Editar empleado</h4>
                                 </div>
                                 <div class="card-body-table">
                                     <div class="news-content-right pd-20">
-                                        <form #employeeForm="ngForm" (ngSubmit) = "addEmployee(employeeForm)">
+                                        <form #employeeForm="ngForm" (ngSubmit) = "updateEmployee(employee)">
                                             
                                             
                                             <div class="form-group">
                                                 <label class="form-label">Nombre</label>
-                                                <input type="text" class="form-control" name="name" #name = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.name">
+                                                <input type="text" class="form-control" name="name" #name = "ngModel" [(ngModel)] = "employee.name">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Apellido</label>
-                                                <input type="text" class="form-control" name="lastName" #lastName = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.lastName">
+                                                <input type="text" class="form-control" name="lastName" #lastName = "ngModel" [(ngModel)] = "employee.lastName">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Fecha de nacimiento</label>
-                                                <input type="text" class="form-control" name="dateOfBirth" #dateOfBirth = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.dateOfBirth">
+                                                <input type="text" class="form-control" name="dateOfBirth" #dateOfBirth = "ngModel" [(ngModel)] = "employee.dateOfBirth">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">País</label>
-                                                <input type="text" class="form-control" name="country" #country = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.country">
+                                                <input type="text" class="form-control" name="country" #country = "ngModel" [(ngModel)] = "employee.country">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Ciudad</label>
-                                                <input type="text" class="form-control" name="city" #city = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.city">
+                                                <input type="text" class="form-control" name="city" #city = "ngModel" [(ngModel)] = "employee.city">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">DNI</label>
-                                                <input type="text" class="form-control" name="dni" #dni = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.dni">
+                                                <input type="text" class="form-control" name="dni" #dni = "ngModel" [(ngModel)] = "employee.dni">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Sexo</label>
-                                                <input type="text" class="form-control" name="gender" #gender = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.gender">
+                                                <input type="text" class="form-control" name="gender" #gender = "ngModel" [(ngModel)] = "employee.gender">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Estado Civil</label>
-                                                <input type="text" class="form-control" name="civilStatus" #civilStatus = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.civilStatus">
+                                                <input type="text" class="form-control" name="civilStatus" #civilStatus = "ngModel" [(ngModel)] = "employee.civilStatus">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Correo Electronico</label>
-                                                <input type="text" class="form-control" name="mail" #mail = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.mail">
+                                                <input type="text" class="form-control" name="mail" #mail = "ngModel" [(ngModel)] = "employee.mail">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Telefono</label>
-                                                <input type="text" class="form-control" name="phone" #phone = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.phone">
+                                                <input type="text" class="form-control" name="phone" #phone = "ngModel" [(ngModel)] = "employee.phone">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Direccion</label>
-                                                <input type="text" class="form-control" name="address" #address = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.address">
+                                                <input type="text" class="form-control" name="address" #address = "ngModel" [(ngModel)] = "employee.address">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Fecha de ingreso</label>
-                                                <input type="text" class="form-control" name="dateOfAdmission" #dateOfAdmission = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.dateOfAdmission">
+                                                <input type="text" class="form-control" name="dateOfAdmission" #dateOfAdmission = "ngModel" [(ngModel)] = "employee.dateOfAdmission">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Estado</label>
-                                                <select id="status" name="status" class="form-control" name="employeeStatus" #employeeStatus = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.employeeStatus">
+                                                <select id="status" name="status" class="form-control" name="employeeStatus" #employeeStatus = "ngModel" [(ngModel)] = "employee.employeeStatus">
                                                     <option selected>Activo</option>
                                                     <option value="1">Inactivo</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Puesto</label>
-                                                <input type="text" class="form-control" name="position" #position = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.position">
+                                                <input type="text" class="form-control" name="position" #position = "ngModel" [(ngModel)] = "employee.position">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Horas de trabajo</label>
-                                                <input type="text" class="form-control" name="workHours" #workHours = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.workHours">
+                                                <input type="text" class="form-control" name="workHours" #workHours = "ngModel" [(ngModel)] = "employee.workHours">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Turno</label>
-                                                <input type="text" class="form-control" name="schedule" #schedule = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.schedule">
+                                                <input type="text" class="form-control" name="schedule" #schedule = "ngModel" [(ngModel)] = "employee.schedule">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Horario</label>
-                                                <input type="text" class="form-control" name="turn" #turn = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.turn">
+                                                <input type="text" class="form-control" name="turn" #turn = "ngModel" [(ngModel)] = "employee.turn">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Sueldo</label>
-                                                <input type="text" class="form-control" name="salary" #salary = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.salary">
+                                                <input type="text" class="form-control" name="salary" #salary = "ngModel" [(ngModel)] = "employee.salary">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Cargas familiares</label>
-                                                <input type="text" class="form-control" name="familyResponsibilities" #familyResponsibilities = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.familyResponsibilities">
+                                                <input type="text" class="form-control" name="familyResponsibilities" #familyResponsibilities = "ngModel" [(ngModel)] = "employee.familyResponsibilities">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">CBU</label>
-                                                <input type="text" class="form-control" name="cbu" #cbu = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.cbu">
+                                                <input type="text" class="form-control" name="cbu" #cbu = "ngModel" [(ngModel)] = "employee.cbu">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Banco</label>
-                                                <input type="text" class="form-control" name="bank" #bank = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.bank">
+                                                <input type="text" class="form-control" name="bank" #bank = "ngModel" [(ngModel)] = "employee.bank">
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Obra social</label>
-                                                <input type="text" class="form-control" name="socialWork" #socialWork = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.socialWork">
+                                                <input type="text" class="form-control" name="socialWork" #socialWork = "ngModel" [(ngModel)] = "employee.socialWork">
                                             </div>
-                                            <button class="save-btn hover-btn" type="submit" >Agregar empleado</button>
+                                            <button class="save-btn hover-btn" type="submit" >Editar empleado</button>
                                             
                                             <hr>
 
                                             <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-                                                <strong>Empleado guardado.</strong>
+                                                <strong>Empleado actualizado.</strong>
                                                 <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                   <span aria-hidden="true">&times;</span>
                                                 </button>

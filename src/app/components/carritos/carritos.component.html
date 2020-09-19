@@ -1,0 +1,120 @@
+<body class="sb-nav-fixed">
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+
+
+
+
+                    <h2 class="mt-30 page-title">Productos</h2>
+                    <div class="row justify-content-between">
+                        <div class="col-lg-10 col-md-16">
+                            <div class="bulk-section mt-30">
+                                <div class="search-by-name-input">
+                                    <input type="text" class="form-control" placeholder="Buscar producto" name="searchprod" placeholder="Buscar producto" [(ngModel)]="searchprod" >
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card card-static-2 mt-30 mb-30">
+                                <div class="card-body-table">
+                                    <div class="table-responsive">
+                                        <table class="table ucp-table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    
+                                                    <th>id</th>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th>Stock</th>
+                                                    <th>Acción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor = "let product of productService.products| filtersearchprod:searchprod">
+                                                
+                                                    <td>{{product._id}}</td>
+                                                    <td>{{product.name}}</td>
+                                                    <td>{{product.price}}</td>
+                                                    <td>{{product.stock}}</td>
+                                                    <td class="action-btns">
+                                                        <a (click)="saveCarrito(product)"  title="Agregar"><i class="fa fa-cart-plus"></i></a>
+                            
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <h2 id = "nuevaventa" class="mt-30 page-title">Nueva venta</h2>
+                    <div class="row justify-content-between">
+                        <div class="col-lg-11 col-md-6">
+                            <div class="bulk-section mt-30">
+                                <div class="search-by-name-input">
+                                    <input type="text" class="form-control" placeholder="Buscar producto" name="searchventaprod" [(ngModel)]="searchventaprod">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card card-static-2 mt-30 mb-30">
+                                <div class="card-body-table">
+                                    <div class="table-responsive">
+                                        <table class="table ucp-table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>id</th>
+                                                    <th>Producto</th>
+                                                    <th>Cantidad</th>
+                                                    <th>Precio</th>
+                                                    <th>Subtotal</th>
+                                                    <th>Acción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor = "let carrito of carritoService.carritos| filterventasearchprod:searchventaprod">
+                                                
+                                                    <td>{{carrito._id}}</td>
+                                                    <td>{{carrito.product}}</td>
+                                                    <td>{{carrito.amount}}</td>
+                                                    <td>{{carrito.price}}</td>
+                                                    <td>{{carrito.subTotal}}</td>
+                                                    <td class="action-btns">
+                                                        
+                                                        <a (click)="deletecarrito(carrito._id)" class="Eliminar-btn" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>		
+                                            </tbody>
+                                        </table>
+                                    
+                                        <div class="col-lg-11 col-md-6">
+                                            <div class="container-fluid">
+                                                <div class="d-flex align-items-center row justify-content-between">
+                                                    <a id = "efectivo" href="ventaEfectivo.html" class="add-btn hover-btn">Efectivo</a>
+                                                    <a id = "mercado" href="ventaMP.html" class="add-btn hover-btn">Mercado Pago</a>
+                                                    <h2 id = "total" class="page-title">Total: </h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+

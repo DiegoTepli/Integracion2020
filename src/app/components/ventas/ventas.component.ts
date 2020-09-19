@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { VentaService } from '../../services/venta.service'; 
 import { NgForm } from '@angular/forms';
 import { Venta } from 'src/app/models/venta';
+import { Product } from 'src/app/models/product';
+import { ProductService } from 'src/app/services/product.service';
+import { CarritoService } from 'src/app/services/carrito.service';
 
 @Component({
   selector: 'app-ventas',
@@ -13,10 +16,9 @@ export class VentasComponent implements OnInit {
   
   alert:boolean=false
 
-  constructor(public ventaService: VentaService) { }
-
+  constructor(public ventaService: VentaService, public productService: ProductService, public carritoService: CarritoService) { }
+  searchprod = '';
   searchventaprod = '';
-
   ngOnInit(): void {
     this.getVentas();
   }
@@ -75,5 +77,8 @@ export class VentasComponent implements OnInit {
   {
     this.alert=false
   }
+
+
+
 
 }

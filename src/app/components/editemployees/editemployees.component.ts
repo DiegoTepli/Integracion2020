@@ -5,13 +5,14 @@ import { Employee } from 'src/app/models/employee';
 import { listemployeesComponent } from 'src/app/components/listemployees/listemployees.component';
 
 @Component({
-  selector: 'app-addemployees',
-  templateUrl: './addemployees.component.html',
-  styleUrls: ['./addemployees.component.css'],
+  selector: 'app-editemployees',
+  templateUrl: './editemployees.component.html',
+  styleUrls: ['./editemployees.component.css'],
   providers: [EmployeeService]
 })
-export class addEmployeesComponent implements OnInit {
+export class editEmployeesComponent implements OnInit {
   
+  employee: Employee = new Employee();
   alert:boolean=false
 
   constructor(public employeeService: EmployeeService) { }
@@ -19,32 +20,26 @@ export class addEmployeesComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.getEmployees();
+    this.editemployee();
   }
-  addEmployee(form: NgForm)
+  updateEmployee(employee: Employee)
   {
-    if(form.value.id){
-      this.employeeService.putEmployee(form.value)
-      .subscribe(res =>{
-        this.resetForm(form);
-        this.getEmployees();
-      })
-    }
-    else
-    {
-      this.employeeService.postEmployee(form.value)
-     .subscribe(res =>{
-       this.resetForm(form);
-      this.getEmployees();
-     });
-    }
+   this.employeeService.putEmployee(employee)
+    .subscribe(data=>{
+      this.employee=data;
+    })
     this.alert=true
   }
   
 
-  editemployee(employee: Employee){
-    this.employeeService.selectedEmployee = employee;
-    console.log(employee);
+  editemployee(){
+    /*this.employeeService.selectedEmployee = employee;
+    console.log(employee);*/
+    let _id=localStorage.getItem("_id");
+    this.employeeService.getCurrentData(_id)
+    .subscribe(data=>{
+      this.employee = data;
+    })
   }
   
   getEmployees() {

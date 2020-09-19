@@ -15,15 +15,20 @@ export class listproductsComponent implements OnInit {
   constructor(public productService: ProductService) { }
 
   searchprod = '';
-
+  pageActual: number = 1;
   ngOnInit(): void {
     this.getProducts();
   }
   
   
-  editproduct(product: Product){
+  /*editproduct(product: Product){
     this.productService.selectedProduct = product;
-  }
+  }*/
+  editproduct(product: Product){
+    /* this.employeeService.selectedEmployee = employee;*/
+    localStorage.setItem("_id", product._id.toString());
+     
+   }
 
 deleteproduct(id: string){
   this.productService.deleteProduct(id)

@@ -15,6 +15,7 @@ export class listemployeesComponent implements OnInit {
   constructor(public employeeService: EmployeeService) { }
 
   searchemp = '';
+  pageActual: number = 1;
 
   ngOnInit(): void {
     this.getEmployees();
@@ -23,8 +24,9 @@ export class listemployeesComponent implements OnInit {
   
   
   editemployee(employee: Employee){
-    this.employeeService.selectedEmployee = employee;
-    console.log(employee);
+   /* this.employeeService.selectedEmployee = employee;*/
+   localStorage.setItem("_id", employee._id.toString());
+    
   }
 
 deleteemployee(id: string){

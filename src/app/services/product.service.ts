@@ -26,10 +26,20 @@ export class ProductService {
   }
 
   putProduct(product: Product) {
-    return this.http.put(this.URL_API + `/${product._id}`, product);
+    return this.http.put<Product>(this.URL_API + `/${product._id}`, product);
   }
 
   deleteProduct(_id: string) {
     return this.http.delete(this.URL_API + `/${_id}`);
   }
+
+  getCurrentData(_id: string) {
+    return this.http.get<Product>(this.URL_API + `/${_id}`);
+  }
+
+  updateProduct(_id, data)
+  {
+    return this.http.put(this.URL_API + `/${_id}`, data);
+  }
+
 }

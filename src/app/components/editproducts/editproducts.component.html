@@ -1,0 +1,61 @@
+
+    <body class="sb-nav-fixed">
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <h2 class="mt-30 page-title">Productos</h2>
+                        <div class="row">
+							<div class="col-lg-6 col-md-6">
+								<div class="card card-static-2 mb-30">
+									<div class="card-title-2">
+										<h4>Editar producto</h4>
+									</div>
+									<div class="card-body-table">
+										<div class="news-content-right pd-20">
+											<form #productForm="ngForm" (ngSubmit) = "updateProduct(product)">
+                                                <input type="hidden" name = "_id" #_id="ngModel" [(ngModel)] = "product._id">
+                                                <div class="form-group">
+                                                    <label class="form-label">Nombre</label>
+                                                    <input type="text" class="form-control" name="name" #name = "ngModel" [(ngModel)] = "product.name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">FechaDeCreacion</label>
+                                                    <input type="text" class="form-control" name="creationDate" #creationDate = "ngModel" [(ngModel)] = "product.creationDate">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Precio</label>
+                                                    <input type="text" class="form-control" name="price" #price = "ngModel" [(ngModel)] = "product.price">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Stock</label>
+                                                    <input type="text" class="form-control" name="stock" #stock = "ngModel" [(ngModel)] = "product.stock">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Estado</label>
+                                                    <input type="text" class="form-control" name="productStatus" #productStatus = "ngModel" [(ngModel)] = "product.productStatus">
+                                                </div>
+                                                <button class="save-btn hover-btn" type="submit" >Actualizar producto</button>
+                                                
+                                                <hr>
+    
+                                                <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                                                    <strong>Producto actualizado.</strong>
+                                                    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                </form>
+										</div> 
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </main>
+                
+            </div>
+        </div>
+		
+		
+    </body>

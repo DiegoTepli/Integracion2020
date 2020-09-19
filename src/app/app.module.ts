@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { addEmployeesComponent } from './components/addemployees/addemployees.component';
@@ -17,6 +17,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { resumenVentasComponent } from './components/resumen-ventas/resumen-ventas.component';
 import { detalleFacturasComponent } from './components/detalle-facturas/detalle-facturas.component';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import {NgxSpinnerModule} from 'ngx-spinner'
+import {NgxPaginationModule} from 'ngx-pagination';
+import { editEmployeesComponent } from './components/editemployees/editemployees.component';
+import { editProductsComponent } from './components/editproducts/editproducts.component';
+import { CarritosComponent } from './components/carritos/carritos.component';
+
 
 @NgModule({
   declarations: [
@@ -31,15 +38,22 @@ import { detalleFacturasComponent } from './components/detalle-facturas/detalle-
     FilterventasearchprodPipe,
     DefaultLayoutComponent,
     resumenVentasComponent,
-    detalleFacturasComponent
+    detalleFacturasComponent,
+    editEmployeesComponent,
+    editProductsComponent,
+    CarritosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ScrollingModule
+    ScrollingModule,
+    InfiniteScrollModule,
+    NgxSpinnerModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
