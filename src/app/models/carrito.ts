@@ -1,3 +1,4 @@
+import { Product } from '../models/product';
 export class Carrito {
 
     constructor(_id = '', product = '', amount = 1, price = 0, subTotal = 0, total = 0)
@@ -7,7 +8,7 @@ export class Carrito {
         this.amount = amount;
         this.price = price;
         this.subTotal = subTotal;
-        this.total = total;
+        
     }
 
     _id: string;
@@ -15,5 +16,5 @@ export class Carrito {
     amount: number;
     price: number;
     subTotal: number;
-    total: number;
+   
 }
